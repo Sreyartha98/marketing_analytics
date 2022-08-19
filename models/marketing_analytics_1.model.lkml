@@ -154,3 +154,5 @@ explore: transactions {
 explore: wordcountreviews {}
 
 explore: wordcountyt {}
+
+explore: test_join_1 {}
