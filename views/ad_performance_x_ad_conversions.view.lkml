@@ -1,4 +1,4 @@
-view: test_join_1 {
+view: ad_performance_x_ad_conversions {
   derived_table: {
     sql: SELECT * FROM `MarketingDataWarehouse.ad_performance`
       LEFT JOIN (
