@@ -154,3 +154,5 @@ explore: transactions {
 explore: wordcountreviews {}
 
 explore: wordcountyt {}
+
+explore: ad_performance_x_ad_conversions {}
