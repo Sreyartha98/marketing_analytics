@@ -88,6 +88,23 @@ view: ad_performance_x_ad_conversions {
     type: number
     sql: ${TABLE}.EcommConversionValue ;;
   }
+  measure: sum_cost {
+    type: sum
+    value_format_name: usd
+    sql: ${cost} ;;
+  }
+
+  measure: sum_ecommconversions {
+    type: sum
+    value_format_name: usd
+    sql: ${ecomm_conversions} ;;
+  }
+
+  measure: CPA {
+    type: number
+    value_format_name: usd
+    sql: ${sum_cost}/ NULLIF(${sum_ecommconversions},0) ;;
+  }
 
   set: detail {
     fields: [
