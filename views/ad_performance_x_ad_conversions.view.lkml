@@ -14,7 +14,7 @@ view: ad_performance_x_ad_conversions {
     drill_fields: [detail*]
   }
 
-  dimension: date {
+  dimension: date_string {
     type: string
     sql: ${TABLE}.Date ;;
   }
@@ -106,10 +106,10 @@ view: ad_performance_x_ad_conversions {
     sql: ${sum_cost}/ NULLIF(${sum_ecommconversions},0) ;;
   }
 
-  dimension: e_date {
+  dimension: date {
     type: date
     datatype: date
-    sql: CAST(${TABLE}.date as DATE) ;;
+    sql: CAST(${TABLE}.date_string as DATE) ;;
   }
 
 
