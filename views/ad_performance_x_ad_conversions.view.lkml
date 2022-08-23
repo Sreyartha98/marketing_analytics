@@ -109,7 +109,7 @@ view: ad_performance_x_ad_conversions {
   dimension: e_date {
     type: date
     datatype: date
-    sql: CAST(${TABLE}.e as DATE) ;;
+    sql: CAST(${TABLE}.date as DATE) ;;
   }
 
 
