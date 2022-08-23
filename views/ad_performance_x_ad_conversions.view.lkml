@@ -106,6 +106,13 @@ view: ad_performance_x_ad_conversions {
     sql: ${sum_cost}/ NULLIF(${sum_ecommconversions},0) ;;
   }
 
+  dimension: e_date {
+    type: date
+    datatype: date
+    sql: CAST(${TABLE}.e as DATE) ;;
+  }
+
+
 
 
   set: detail {
