@@ -108,15 +108,16 @@ view: ad_performance_x_ad_conversions {
 
   measure: cost_target_comparision_percentage {
     type:  number
-    sql: SUM(Cost)/
+    sql:  SUM(Cost)/
 (
-(IF (COUNT_DISTINCT(IF(${campaign_id}=8302296690,1,NULL))=1,8600 ,0)*COUNT_DISTINCT(MONTH(Date)) )+
-(IF (COUNT_DISTINCT(IF(${campaign_id}=3148103082,1,NULL))=1,19000,0)*COUNT_DISTINCT(MONTH(Date)) )+
-(IF (COUNT_DISTINCT(IF(${campaign_id}=8375334918,1,NULL))=1,5800 ,0)*COUNT_DISTINCT(MONTH(Date)) )+
-(IF (COUNT_DISTINCT(IF(${campaign_id}=3839938543,1,NULL))=1,9000 ,0)*COUNT_DISTINCT(MONTH(Date)) )+
-(IF (COUNT_DISTINCT(IF(${campaign_id}=7049682206,1,NULL))=1,4300 ,0)*COUNT_DISTINCT(MONTH(Date)) )+
-(IF (COUNT_DISTINCT(IF(${campaign_id}=2403457911,1,NULL))=1,2000 ,0)*COUNT_DISTINCT(MONTH(Date)) )
-) - 1 ;;
+(IF (COUNT DISTINCT(IF( ad_performance_x_ad_conversions.CampaignId  =8302296690,1,NULL))=1,8600 ,0)*COUNT DISTINCT(MONTH(Date)) )+
+(IF (COUNT DISTINCT(IF( ad_performance_x_ad_conversions.CampaignId  =3148103082,1,NULL))=1,19000,0)*COUNT DISTINCT(MONTH(Date)) )+
+(IF (COUNT DISTINCT(IF( ad_performance_x_ad_conversions.CampaignId  =8375334918,1,NULL))=1,5800 ,0)*COUNT DISTINCT(MONTH(Date)) )+
+(IF (COUNT DISTINCT(IF( ad_performance_x_ad_conversions.CampaignId  =3839938543,1,NULL))=1,9000 ,0)*COUNT DISTINCT(MONTH(Date)) )+
+(IF (COUNT DISTINCT(IF( ad_performance_x_ad_conversions.CampaignId  =7049682206,1,NULL))=1,4300 ,0)*COUNT DISTINCT(MONTH(Date)) )+
+(IF (COUNT DISTINCT(IF( ad_performance_x_ad_conversions.CampaignId  =2403457911,1,NULL))=1,2000 ,0)*COUNT DISTINCT(MONTH(Date)) )
+) - 1
+ ;;
 
   }
 
