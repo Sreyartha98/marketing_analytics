@@ -112,7 +112,10 @@ view: ad_performance_x_ad_conversions {
     sql: CAST(${TABLE}.date as DATE) ;;
   }
 
-
+  dimension: count_month {
+    type:  number
+    sql:  count(distinct(extract_months(CAST(${TABLE}.date as DATE)))) ;;
+  }
 
 
   set: detail {
