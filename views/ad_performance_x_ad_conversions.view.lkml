@@ -112,10 +112,6 @@ view: ad_performance_x_ad_conversions {
     datatype: date
     sql: CAST(${TABLE}.date as DATE) ;;
   }
-
-
-
-
   set: detail {
     fields: [
       date,
