@@ -1,3 +1,4 @@
+
 view: ad_performance_x_ad_conversions {
 
   derived_table: {
