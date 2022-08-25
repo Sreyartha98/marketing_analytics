@@ -1,3 +1,4 @@
+
 view: ad_performance_x_ad_conversions {
 
   derived_table: {
@@ -111,12 +112,6 @@ view: ad_performance_x_ad_conversions {
     datatype: date
     sql: CAST(${TABLE}.date as DATE) ;;
   }
-
-  measure: count_month {
-    type:  number
-    sql:  count(distinct(extract_months(CAST(${TABLE}.date as DATE)))) ;;
-  }
-
 
   set: detail {
     fields: [
