@@ -64,7 +64,7 @@ view: transactions {
   }
 
   dimension: transaction_date {
-    type: string
+    type: date
     sql: ${TABLE}.transaction_date ;;
   }
 
