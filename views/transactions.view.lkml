@@ -64,7 +64,7 @@ view: transactions {
   }
 
   dimension: transaction_date {
-    type: date_day_of_week
+    type: date_week_of_year
     sql: ${TABLE}.transaction_date ;;
   }
 
