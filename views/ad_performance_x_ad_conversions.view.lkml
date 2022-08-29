@@ -119,6 +119,20 @@ view: ad_performance_x_ad_conversions {
     ;;
   }
 
+  measure: cpa_target{
+    type:  number
+    sql: SUM(Cost)/SUM(EcommConversions)/
+
+CASE
+    WHEN MAX(CampaignId) = 8302296690 THEN 33
+    WHEN MAX(CampaignId) = 3148103082 THEN 75
+    WHEN MAX(CampaignId) = 8375334918 THEN 22
+    WHEN MAX(CampaignId) = 3839938543 THEN 33
+    WHEN MAX(CampaignId) = 7049682206 THEN 15
+    WHEN MAX(CampaignId) = 2403457911 THEN 8
+END
+-1   ;;
+  }
 
 
 
