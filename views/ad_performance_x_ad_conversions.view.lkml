@@ -107,6 +107,28 @@ view: ad_performance_x_ad_conversions {
     sql: ${sum_cost}/ NULLIF(${sum_ecommconversions},0) ;;
   }
 
+
+  measure: conversion_current_target {
+    type: number
+    sql:
+    WITH temp AS(
+      SELECT array_agg(DISTINCT (${TABLE}.CampaignId)) AS list_of_campaignID,
+      COUNT (DISTINCT (EXTRACT(MONTH FROM PARSE_DATE('%Y-%m-%d',${TABLE}.Date)))) AS month_count
+      from ${TABLE}
+      )
+      select
+        IF (8375334918 IN UNNEST(list_of_campaignID),month_count*277,0) +
+        IF (3839938543 IN UNNEST(list_of_campaignID),month_count*277,0) +
+        IF (3839938543 IN UNNEST(list_of_campaignID),month_count*277,0) +
+        IF (3839938543 IN UNNEST(list_of_campaignID),month_count*277,0) +
+        IF (3839938543 IN UNNEST(list_of_campaignID),month_count*277,0) +
+        IF (3839938543 IN UNNEST(list_of_campaignID),month_count*277,0)
+      from temp
+    ;;
+  }
+
+
+
   dimension: date {
     type: date
     datatype: date
