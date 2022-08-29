@@ -111,21 +111,17 @@ view: ad_performance_x_ad_conversions {
   measure: conversion_current_target {
     type: number
     sql:
-    WITH temp AS(
-      SELECT array_agg(DISTINCT (${TABLE}.CampaignId)) AS list_of_campaignID,
-      COUNT (DISTINCT (EXTRACT(MONTH FROM PARSE_DATE('%Y-%m-%d',${TABLE}.Date)))) AS month_count
-      from ${TABLE}
-      )
-      select
-        IF (8375334918 IN UNNEST(list_of_campaignID),month_count*277,0) +
-        IF (3839938543 IN UNNEST(list_of_campaignID),month_count*277,0) +
-        IF (3839938543 IN UNNEST(list_of_campaignID),month_count*277,0) +
-        IF (3839938543 IN UNNEST(list_of_campaignID),month_count*277,0) +
-        IF (3839938543 IN UNNEST(list_of_campaignID),month_count*277,0) +
-        IF (3839938543 IN UNNEST(list_of_campaignID),month_count*277,0)
-      from temp
+        IF (8375334918 IN UNNEST(array_agg(DISTINCT (CampaignId))),COUNT (DISTINCT (EXTRACT(MONTH FROM PARSE_DATE('%Y-%m-%d',${TABLE}.Date))))*277,0) +
+        IF (3839938543 IN UNNEST(array_agg(DISTINCT (CampaignId))),COUNT (DISTINCT (EXTRACT(MONTH FROM PARSE_DATE('%Y-%m-%d',${TABLE}.Date))))*277,0) +
+        IF (3839938543 IN UNNEST(array_agg(DISTINCT (CampaignId))),COUNT (DISTINCT (EXTRACT(MONTH FROM PARSE_DATE('%Y-%m-%d',${TABLE}.Date))))*277,0) +
+        IF (3839938543 IN UNNEST(array_agg(DISTINCT (CampaignId))),COUNT (DISTINCT (EXTRACT(MONTH FROM PARSE_DATE('%Y-%m-%d',${TABLE}.Date))))*277,0) +
+        IF (3839938543 IN UNNEST(array_agg(DISTINCT (CampaignId))),COUNT (DISTINCT (EXTRACT(MONTH FROM PARSE_DATE('%Y-%m-%d',${TABLE}.Date))))*277,0) +
+        IF (3839938543 IN UNNEST(array_agg(DISTINCT (CampaignId))),COUNT (DISTINCT (EXTRACT(MONTH FROM PARSE_DATE('%Y-%m-%d',${TABLE}.Date))))*277,0)
     ;;
   }
+
+
+  measure: list_ofcampaignID {}
 
 
 
