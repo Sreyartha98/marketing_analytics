@@ -97,7 +97,6 @@ view: ad_performance_x_ad_conversions {
 
   measure: sum_ecommconversions {
     type: sum
-    value_format_name: usd
     sql: ${ecomm_conversions} ;;
   }
 
