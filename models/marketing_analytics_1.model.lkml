@@ -158,5 +158,3 @@ explore: wordcountyt {}
 explore: ad_performance_x_ad_conversions {}
 
 explore: store_join_inventory_location {}
-
-explore: conversion_current_target {}
