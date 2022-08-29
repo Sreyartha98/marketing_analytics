@@ -121,8 +121,6 @@ view: ad_performance_x_ad_conversions {
   }
 
 
-  measure: list_ofcampaignID {}
-
 
 
   dimension: date {
