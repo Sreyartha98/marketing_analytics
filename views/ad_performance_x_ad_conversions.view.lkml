@@ -76,20 +76,6 @@ view: ad_performance_x_ad_conversions {
     sql: ${TABLE}.AdvertisingChannelType ;;
   }
 
-  dimension: test {
-    sql: ${TABLE}.CampaignName ;;
-    html: {% if value == 'Paid' %}
-      <p style="color: black; background-color: lightblue; font-size:100%; text-align:center">{{ rendered_value }}</p>
-    {% elsif value == 'Shipped' %}
-      <p style="color: black; background-color: lightgreen; font-size:100%; text-align:center">{{ rendered_value }}</p>
-    {% else %}
-      <p style="color: black; background-color: orange; font-size:100%; text-align:center">{{ rendered_value }}</p>
-    {% endif %}
-;;
-  }
-
-
-
 
   dimension: campaign_status {
     type: string
