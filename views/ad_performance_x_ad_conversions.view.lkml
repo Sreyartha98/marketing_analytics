@@ -77,7 +77,7 @@ view: ad_performance_x_ad_conversions {
   }
 
   dimension: test {
-    sql: ${TABLE}.AccountCurrencyCode]; ;;
+    sql: ${TABLE}.CampaignName ;;
     html: {% if value == 'Paid' %}
       <p style="color: black; background-color: lightblue; font-size:100%; text-align:center">{{ rendered_value }}</p>
     {% elsif value == 'Shipped' %}
