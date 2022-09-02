@@ -97,7 +97,7 @@ view: ad_performance_x_ad_conversions {
 
   measure: sum_ecommconversions {
     type: sum
-    sql: ${ecomm_conversions} ;;
+    sql: ${ecomm_conversions};;
   }
 
   measure: CPA {

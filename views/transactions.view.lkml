@@ -79,6 +79,12 @@ view: transactions {
       ;;
   }
 
+  measure: product_sales_target {
+    type: number
+    sql: COUNT (DISTINCT (EXTRACT(MONTH FROM PARSE_DATE('%Y-%m-%d',${TABLE}.transaction_date))))*76000
+      ;;
+  }
+
 
   measure: count {
     type: count
