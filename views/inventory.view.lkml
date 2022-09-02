@@ -45,6 +45,11 @@ view: inventory {
     type: number
     sql: ${TABLE}.store_code ;;
   }
+  measure: out_of_stock_percentage {
+    type: number
+    sql: COUNTIF(${availability}="out_of_stock")/COUNT(${availability})*100 ;;
+  }
+
 
   measure: count {
     type: count
