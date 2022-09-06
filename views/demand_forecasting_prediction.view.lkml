@@ -32,7 +32,7 @@ view: demand_forecasting_prediction {
   }
 
   dimension: event_date {
-    type: string
+    type: date
     sql: ${TABLE}.event_date ;;
   }
 
