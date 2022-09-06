@@ -160,6 +160,12 @@ view: demand_forecasting_prediction {
     sql: ${TABLE}.store_longitude ;;
   }
 
+  dimension: location_new {
+    type: location
+    sql_latitude: ${TABLE}.store_latitude ;;
+    sql_longitude: ${TABLE}.store_longitude ;;
+  }
+
   dimension: store_name {
     type: string
     sql: ${TABLE}.store_name ;;
