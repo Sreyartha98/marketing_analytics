@@ -162,8 +162,8 @@ view: demand_forecasting_prediction {
 
   dimension: location_new {
     type: location
-    sql_latitude: ${TABLE}.store_latitude ;;
-    sql_longitude: ${TABLE}.store_longitude ;;
+    sql_latitude: ${TABLE}.store_longitude ;;
+    sql_longitude: ${TABLE}.store_latitude ;;
   }
 
   dimension: store_name {
