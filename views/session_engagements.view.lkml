@@ -80,6 +80,11 @@ view: session_engagements {
     sql: ${TABLE}.engagement_time_seconds ;;
   }
 
+  measure: total_sessions_target {
+    type: number
+    sql: COUNT(DISTINCT (EXTRACT(MONTH FROM PARSE_DATE('%Y-%m-%d',${TABLE}.event_timestamp))))*968000;;
+  }
+
   set: detail {
     fields: [
       user_pseudo_id,
