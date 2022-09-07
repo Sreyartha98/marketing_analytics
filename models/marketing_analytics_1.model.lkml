@@ -162,3 +162,5 @@ explore: store_join_inventory_location {}
 explore: transactions_mod {}
 
 explore: session_engagements {}
+
+explore: event_pages_dates {}
