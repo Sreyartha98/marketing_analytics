@@ -47,8 +47,8 @@ from `MarketingDataWarehouse.events_mod` AS page_x_session
   }
 
   measure: sum_engagement_time_msec {
-    type: number
-    sql: SUM(${engagement_time_msec}) ;;
+    type: sum
+    sql: ${engagement_time_msec} ;;
   }
 
   measure: avg_time_on_page {
