@@ -164,3 +164,5 @@ explore: transactions_mod {}
 explore: session_engagements {}
 
 explore: event_pages_dates {}
+
+explore: page_title_x_session_details {}
