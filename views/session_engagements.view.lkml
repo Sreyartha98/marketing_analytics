@@ -82,7 +82,7 @@ view: session_engagements {
 
   measure: total_sessions_target {
     type: number
-    sql: COUNT(DISTINCT (EXTRACT(MONTH FROM PARSE_DATE('%Y-%m-%d',${TABLE}.event_timestamp))))*968000;;
+    sql: COUNT(DISTINCT EXTRACT(MONTH FROM ${event_timestamp}))*968000;;
   }
 
   set: detail {
