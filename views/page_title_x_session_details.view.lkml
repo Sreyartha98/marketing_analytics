@@ -63,7 +63,7 @@ from `MarketingDataWarehouse.events_mod` AS page_x_session
 
   measure: avg_time_on_page_table {
     type: number
-    sql: SUM(${engagement_time_msec})/60/COUNT(${engagement_time_msec} ;;
+    sql: SUM(${engagement_time_msec})/60/COUNT(${engagement_time_msec}) ;;
   }
 
 
