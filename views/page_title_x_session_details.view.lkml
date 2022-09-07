@@ -58,7 +58,7 @@ from `MarketingDataWarehouse.events_mod` AS page_x_session
 
   measure: bounce_rate {
     type: number
-    sql: 1-(SUM(${session_engaged})/COUNT(${session_engaged}))) ;;
+    sql: 1-(SUM(${session_engaged})/COUNT(${session_engaged})) ;;
   }
 
 
