@@ -46,7 +46,7 @@ view: session_engagements {
   }
 
   dimension: event_timestamp {
-    type: string
+    type: number
     sql: ${TABLE}.event_timestamp ;;
   }
 
