@@ -56,6 +56,11 @@ from `MarketingDataWarehouse.events_mod` AS page_x_session
     sql: ${sum_engagement_time_msec}/COUNT(DISTINCT(${page_title}))/1000 ;;
   }
 
+  measure: bounce_rate {
+    type: number
+    sql: 1-(SUM(${session_engaged})/COUNT(${session_engaged}))) ;;
+  }
+
 
 
   set: detail {
