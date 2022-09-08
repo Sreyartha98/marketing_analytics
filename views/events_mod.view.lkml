@@ -320,6 +320,12 @@ view: events_mod {
     group_item_label: "Region"
   }
 
+  dimension: state {
+    map_layer_name: us_states
+    sql: ${TABLE}.geo.region;;
+  }
+
+
   dimension: geo__sub_continent {
     type: string
     sql: ${TABLE}.geo.sub_continent ;;
