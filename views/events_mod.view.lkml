@@ -257,6 +257,11 @@ view: events_mod {
     sql: ${TABLE}.event_name ;;
   }
 
+  measure: count_event_name {
+    type: number
+    sql: COUNT(${event_name}) ;;
+  }
+
   # This field is hidden, which means it will not show up in Explore.
   # If you want this field to be displayed, remove "hidden: yes".
 
