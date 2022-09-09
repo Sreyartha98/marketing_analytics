@@ -26,7 +26,6 @@ persist_with: marketing_analytics_1_default_datagroup
 # Each joined view also needs to define a primary key.
 
 explore: product_reviews_sentiment {}
-
 explore: video_id {}
 
 explore: audience_cohorts_kmeans_centroids {
