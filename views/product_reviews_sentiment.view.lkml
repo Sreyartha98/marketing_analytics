@@ -57,8 +57,8 @@ view: product_reviews_sentiment {
   dimension: sentiment {
     type: string
     sql: CASE
-    WHEN (polarity>=0.2 AND magnitude > 0.1 )THEN "Positive"
-    WHEN (polarity< -0.1 AND magnitude > 0.1 ) THEN "Negative"
+    WHEN (${TABLE}.polarity>=0.2 AND ${TABLE}magnitude > 0.1 )THEN "Positive"
+    WHEN (${TABLE}.polarity< -0.1 AND ${TABLE}magnitude > 0.1 ) THEN "Negative"
     ELSE "Neutral"
 END ;;
   }
