@@ -28,7 +28,7 @@ persist_with: marketing_analytics_1_default_datagroup
 explore: product_reviews_sentiment {
   join: wordcountreviews {
     type: left_outer
-    relationship: many_to_one
+    relationship: one_to_many
     sql_on: ${product_reviews_sentiment.product} = ${wordcountreviews.product} or
     ${product_reviews_sentiment.review} = ${wordcountreviews.review} or
     ${product_reviews_sentiment.polarity} = ${wordcountreviews.polarity} or
