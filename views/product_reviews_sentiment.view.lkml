@@ -54,6 +54,14 @@ view: product_reviews_sentiment {
     type: number
     sql: ${TABLE}.Star_Rating ;;
   }
+  dimension: sentiment {
+    type: string
+    sql: CASE
+    WHEN (polarity>=0.2 AND magnitude > 0.1 )THEN "Positive"
+    WHEN (polarity< -0.1 AND magnitude > 0.1 ) THEN "Negative"
+    ELSE "Neutral"
+END ;;
+  }
 
   measure: count {
     type: count
