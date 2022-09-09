@@ -25,7 +25,13 @@ persist_with: marketing_analytics_1_default_datagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
-explore: product_reviews_sentiment {}
+explore: product_reviews_sentiment {
+  join: wordcountreviews {
+    type: left_outer
+    relationship: many_to_many
+    sql_on: ${product_reviews_sentiment.product} = ${wordcountreviews.product};;
+  }
+}
 explore: video_id {}
 
 explore: audience_cohorts_kmeans_centroids {
