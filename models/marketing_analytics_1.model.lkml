@@ -29,10 +29,10 @@ explore: product_reviews_sentiment {
   join: wordcountreviews {
     type: left_outer
     relationship: one_to_many
-    sql_on: ${product_reviews_sentiment.product} = ${wordcountreviews.product} or
-    ${product_reviews_sentiment.review} = ${wordcountreviews.review} or
-    ${product_reviews_sentiment.polarity} = ${wordcountreviews.polarity} or
-    ${product_reviews_sentiment.star_rating} = ${wordcountreviews.star_rating} or
+    sql_on: ${product_reviews_sentiment.product} = ${wordcountreviews.product} and
+    ${product_reviews_sentiment.review} = ${wordcountreviews.review} and
+    ${product_reviews_sentiment.polarity} = ${wordcountreviews.polarity} and
+    ${product_reviews_sentiment.star_rating} = ${wordcountreviews.star_rating} and
     ${product_reviews_sentiment.magnitude} = ${wordcountreviews.magnitude};;
   }
 }
