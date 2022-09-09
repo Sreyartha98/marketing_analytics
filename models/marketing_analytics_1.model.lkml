@@ -28,14 +28,16 @@ persist_with: marketing_analytics_1_default_datagroup
 explore: product_reviews_sentiment {
   join: wordcountreviews {
     type: left_outer
-    relationship: one_to_many
-    sql_on: ${product_reviews_sentiment.product} = ${wordcountreviews.product} and
+    relationship: many_to_many
+    sql_on:
+    ${product_reviews_sentiment.product} = ${wordcountreviews.product} and
     ${product_reviews_sentiment.review} = ${wordcountreviews.review} and
     ${product_reviews_sentiment.polarity} = ${wordcountreviews.polarity} and
     ${product_reviews_sentiment.star_rating} = ${wordcountreviews.star_rating} and
-    ${product_reviews_sentiment.magnitude} = ${wordcountreviews.magnitude};;
+    ${product_reviews_sentiment.magnitude} = ${wordcountreviews.magnitude} ;;
   }
 }
+
 explore: video_id {}
 
 explore: audience_cohorts_kmeans_centroids {
