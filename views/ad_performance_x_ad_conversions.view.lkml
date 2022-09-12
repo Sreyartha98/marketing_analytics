@@ -205,7 +205,7 @@ view: ad_performance_x_ad_conversions {
 
   dimension: date {
     type: date
-    datatype: date
+    datatype: timestamp
     sql: CAST(${TABLE}.date as DATE) ;;
   }
 
