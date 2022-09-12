@@ -209,6 +209,12 @@ view: ad_performance_x_ad_conversions {
     sql: CAST(${TABLE}.date as DATE) ;;
   }
 
+  dimension_group: date_1 {
+    type: time
+    timeframes: [date, week, month]
+    sql: ${TABLE}.date ;;
+  }
+
   set: detail {
     fields: [
       date,
