@@ -52,7 +52,7 @@ view: transactions {
   dimension_group: dim_date {
     type: time
     timeframes: [date, week, month, raw]
-    sql: ${TABLE}.transaction_date ;;
+    sql: CAST(${TABLE}.transaction_date AS TIMESTAMP) ;;
   }
 
   dimension: store_code {
