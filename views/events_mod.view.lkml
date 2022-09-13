@@ -245,6 +245,11 @@ view: events_mod {
     sql: ${TABLE}.event_date ;;
   }
 
+  measure: max_event_date{
+    type : string
+    sql: MAX(${TABLE}.event_date) ;;
+  }
+
   dimension: event_dimensions__hostname {
     type: string
     sql: ${TABLE}.event_dimensions.hostname ;;
