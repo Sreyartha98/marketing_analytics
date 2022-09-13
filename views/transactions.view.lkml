@@ -73,6 +73,14 @@ view: transactions {
     sql: ${TABLE}.username ;;
   }
 
+
+
+  dimension: location_new {
+    type: location
+    sql_latitude: CAST ( SPLIT(REPLACE(REPLACE(${TABLE}.store_location,'POINT(',''),')',''),' ')[offset(1)] AS FLOAT64) ;;
+    sql_longitude:CAST ( SPLIT(REPLACE(REPLACE(${TABLE}.store_location,'POINT(',''),')',''),' ')[offset(0)] AS FLOAT64) ;;
+  }
+
   measure: sales_target {
     type: number
     sql: COUNT (DISTINCT (EXTRACT(MONTH FROM PARSE_DATE('%Y-%m-%d',${TABLE}.transaction_date))))*46600

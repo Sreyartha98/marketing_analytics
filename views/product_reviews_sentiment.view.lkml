@@ -12,6 +12,7 @@ view: product_reviews_sentiment {
   # This dimension will be called "Int64 Field 0" in Explore.
 
   dimension: int64_field_0 {
+    primary_key: yes
     type: number
     sql: ${TABLE}.int64_field_0 ;;
   }
@@ -58,13 +59,14 @@ view: product_reviews_sentiment {
 
   dimension: sentiment {
     type: string
+
     sql:
     CASE
       WHEN (${TABLE}.polarity>=0.2 AND ${TABLE}.magnitude > 0.1 )THEN "Positive"
       WHEN (${TABLE}.polarity< -0.1 AND ${TABLE}.magnitude > 0.1 ) THEN "Negative"
       ELSE "Neutral"
     END ;;
-  }
+}
 
   measure: count {
     type: count
