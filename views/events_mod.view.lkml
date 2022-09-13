@@ -241,7 +241,7 @@ view: events_mod {
   }
 
   dimension: event_date {
-    type: string
+    type: date
     sql: ${TABLE}.event_date ;;
   }
 
