@@ -48,6 +48,13 @@ view: transactions {
     sql: ${TABLE}.product_ids ;;
   }
 
+
+  dimension_group: dim_date {
+    type: time
+    timeframes: [date, week, month, raw]
+    sql: ${TABLE}.transaction_date ;;
+  }
+
   dimension: store_code {
     type: number
     sql: ${TABLE}.store_code ;;

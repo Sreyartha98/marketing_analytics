@@ -20,11 +20,7 @@ view: transactions_mod {
     drill_fields: [detail*]
   }
 
-  dimension_group: dim_date {
-    type: time
-    timeframes: [time, date, week, month, raw]
-    sql: ${TABLE}.transaction_date ;;
-  }
+
 
 
   dimension: username {
