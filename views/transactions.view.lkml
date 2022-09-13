@@ -73,6 +73,12 @@ view: transactions {
     sql: ${TABLE}.username ;;
   }
 
+  dimension: location_new {
+    type: location
+    sql_latitude: ${TABLE}.latitude ;;
+    sql_longitude: ${TABLE}.longitude ;;
+  }
+
   measure: sales_target {
     type: number
     sql: COUNT (DISTINCT (EXTRACT(MONTH FROM PARSE_DATE('%Y-%m-%d',${TABLE}.transaction_date))))*46600
