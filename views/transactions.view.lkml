@@ -73,10 +73,12 @@ view: transactions {
     sql: ${TABLE}.username ;;
   }
 
+
+
   dimension: location_new {
     type: location
-    sql_latitude: ${TABLE}.latitude ;;
-    sql_longitude: ${TABLE}.longitude ;;
+    sql_latitude: CAST ( SPLIT(REPLACE(REPLACE(${TABLE}.store_location,'POINT(',''),')',''),' ')[offset(1)] AS FLOAT64) ;;
+    sql_longitude:CAST ( SPLIT(REPLACE(REPLACE(${TABLE}.store_location,'POINT(',''),')',''),' ')[offset(0)] AS FLOAT64) ;;
   }
 
   measure: sales_target {
