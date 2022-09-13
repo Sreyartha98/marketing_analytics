@@ -108,6 +108,11 @@ explore: events_mod {
     sql: LEFT JOIN UNNEST(${events_mod.user_properties}) as events_mod__user_properties ;;
     relationship: one_to_many
   }
+  join: products {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${events_mod__items.item_id} = ${products.item_id} ;;
+  }
 }
 
 explore: events {
