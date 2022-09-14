@@ -247,7 +247,7 @@ view: events_mod {
 
   measure: max_event_date{
     type : date
-    sql: MAX(${TABLE}.event_date) ;;
+    sql: CAST(MAX(${TABLE}.event_date) as TIMESTAMP) ;;
   }
 
   dimension: event_dimensions__hostname {
