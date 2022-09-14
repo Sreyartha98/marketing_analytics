@@ -246,7 +246,7 @@ view: events_mod {
   }
 
   measure: max_event_date{
-    type : string
+    type : date
     sql: MAX(${TABLE}.event_date) ;;
   }
 
