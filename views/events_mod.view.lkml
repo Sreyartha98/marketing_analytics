@@ -151,13 +151,6 @@ view: events_mod {
     group_item_label: "Purchase Revenue"
   }
 
-  dimension: id {
-    type: number
-    primary_key: yes
-    sql: ROW_NUMBER() OVER();;
-  }
-
-
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.

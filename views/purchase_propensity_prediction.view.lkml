@@ -161,6 +161,12 @@ view: purchase_propensity_prediction {
     sql: ${TABLE}.event_date ;;
   }
 
+  dimension_group: date_1 {
+    type: time
+    timeframes: [date, week, month]
+    sql: CAST(${TABLE}.event_date AS TIMESTAMP)  ;;
+  }
+
   dimension: exit_rate {
     type: number
     sql: ${TABLE}.exit_rate ;;
