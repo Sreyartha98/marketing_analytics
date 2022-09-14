@@ -68,6 +68,12 @@ view: transactions {
     sql: ${TABLE}.transaction_date ;;
   }
 
+  dimension_group: date_1 {
+    type: time
+    timeframes: [date, week, month]
+    sql: CAST(${TABLE}.transaction_date AS TIMESTAMP)  ;;
+  }
+
   dimension: username {
     type: string
     sql: ${TABLE}.username ;;
