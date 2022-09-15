@@ -68,7 +68,11 @@ view: ad_performance_x_ad_conversions {
 
   dimension: campaign_name {
     type: string
-    sql: ${TABLE}.CampaignName ;;
+    sql: ${TABLE}.CampaignName;;
+    link: {
+    label: "View Individual Campaign"
+    url:"https://protodemo.cloud.looker.com/dashboards/135?Campaign+Name= {{ value | url_encode }}"
+  }
   }
 
   dimension: advertising_channel_type {
