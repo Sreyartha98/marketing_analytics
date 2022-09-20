@@ -28,6 +28,7 @@ view: wordcountreviews {
   measure: total_count {
     type: sum
     sql: ${count} ;;
+    drill_fields: [product, star_rating, review ]
   }
 
   measure: average_count {
